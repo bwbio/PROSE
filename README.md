@@ -1,7 +1,7 @@
 # PROSE
 Given a gene/protein list, PROSE identifies similarly enriched genes/proteins from a co-expression matrix. 
 
-PROSE generates scores from a set of observed and unobserved proteins.
+'''PROSE generates scores from a set of observed and unobserved proteins.
 
 =========================================================
 
@@ -48,3 +48,4 @@ logistic_kwargs = {}
 svm_kwargs = {}
 bag_kwargs = {'n_estimators':100, 'max_samples':1000, 'max_features':100}
 train_test_kwargs = {'test_size':holdout_n*2, 'shuffle':True, 'random_state':}
+'''
