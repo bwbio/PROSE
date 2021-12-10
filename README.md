@@ -27,12 +27,10 @@ print(result)
 
 ```
 
-#Documentation
+# Documentation
 
-<details><summary>CLICK ME</summary>
-<p>
+<details><summary>Attributes</summary><p>
 
-Attributes:
 summary: (pandas.DataFrame) a summary of classifier results
 clf: fitted sklearn.SVM.LinearSVC object
 lr: fitted sklearn.linear_model.LogisticRegression object
