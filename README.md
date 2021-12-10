@@ -3,6 +3,8 @@
 
 Given a list of observed or unobserved gene/protein list, PROSE identifies similarly enriched genes/proteins from a co-expression matrix. PROSE can also use a list of upregulated/downregulated elements as the input.
 
+Read the preprint here: https://doi.org/10.1101/2021.11.13.468488
+
 # Example Usage
 
 Begin with the following files in the same working directory:
