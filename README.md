@@ -9,13 +9,12 @@ klijn_panel_spearmanCorr.tsv
 HeLa_DDA_sample.pkl
 
 ```
-
-
 #Load the example data (from Mehta et al. (2021), HeLa DDA)
 with open('HeLa_DDA_sample.pkl', 'rb') as handle:
     testdata = pickle.load(handle)
 obs = testdata['HeLa R1']['two peptide'] #set of observed proteins
 unobs = testdata['HeLa R1']['no evidence'] #set of unobserved proteins
+
 
 #Load the correlation matrix
 panel_corr = pd.read_csv('klijn_panel_spearmanCorr.tsv', sep='\t',index_col=0)
@@ -28,19 +27,19 @@ print(result)
 
 ```
 
+#Documentation
 
-```
-PROSE generates scores from a set of observed and unobserved proteins.
-
-=========================================================
-
-Returns a prose object with the following attributes:
+<details><summary>CLICK ME</summary>
+<p>
 
 Attributes:
 summary: (pandas.DataFrame) a summary of classifier results
 clf: fitted sklearn.SVM.LinearSVC object
 lr: fitted sklearn.linear_model.LogisticRegression object
 
+</p></details>
+
+    
 Diagnostics:
 clf_report_train: classification metrics on training set
 cm_train: confusion matrix on training set
@@ -49,8 +48,6 @@ clf_report: classification metrics on test set (requires holdout=True)
 cm: confusion matrix on test set (requires holdout=True)
 f1: F1 score on test set (requires holdout=True)
 runtime: (float) runtime in seconds
-
-=========================================================
 
 Required arguments:
 obs: (set/list/1D-like) observed proteins
@@ -77,4 +74,3 @@ logistic_kwargs = {}
 svm_kwargs = {}
 bag_kwargs = {'n_estimators':100, 'max_samples':1000, 'max_features':100}
 train_test_kwargs = {'test_size':holdout_n*2, 'shuffle':True, 'random_state':}
-```
