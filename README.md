@@ -23,9 +23,9 @@ import prose
 
 result = prose.prose(obs, unobs, panel_corr)
 
-print(result)
-
+print(result.summary)
 ```
+
 
 # Documentation
 
