@@ -1,6 +1,21 @@
 # PROSE
 Given a gene/protein list, PROSE identifies similarly enriched genes/proteins from a co-expression matrix. 
 
+# Usage
+```
+import prose
+
+#obs: a set of observed proteins
+#unobs: a set of unobserved proteins
+#panel_corr: is the correlation matrix
+
+result = prose.prose(obs, unobs, panel_corr)
+
+print(result)
+
+```
+
+
 ```
 PROSE generates scores from a set of observed and unobserved proteins.
 
