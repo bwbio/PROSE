@@ -1,13 +1,26 @@
 # PROSE
-Given a gene/protein list, PROSE identifies similarly enriched genes/proteins from a co-expression matrix. 
+Given a list of observed or unobserved gene/protein list, PROSE identifies similarly enriched genes/proteins from a co-expression matrix. PROSE can also use a list of upregulated/downregulated elements as the input.
 
-# Usage
+# Example Usage
+
+Begin with the following files in the same working directory:
+prose.py
+klijn_panel_spearmanCorr.tsv
+HeLa_DDA_sample.pkl
+
 ```
-import prose
 
-#obs: a set of observed proteins
-#unobs: a set of unobserved proteins
-#panel_corr: is the correlation matrix
+
+#Load the example data (from Mehta et al. (2021), HeLa DDA)
+with open('HeLa_DDA_sample.pkl', 'rb') as handle:
+    testdata = pickle.load(handle)
+obs = testdata['HeLa R1']['two peptide'] #set of observed proteins
+unobs = testdata['HeLa R1']['no evidence'] #set of unobserved proteins
+
+#Load the correlation matrix
+panel_corr = pd.read_csv('klijn_panel_spearmanCorr.tsv', sep='\t',index_col=0)
+
+import prose
 
 result = prose.prose(obs, unobs, panel_corr)
 
