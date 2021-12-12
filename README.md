@@ -1,9 +1,12 @@
 # PROSE
-![Schematic](https://github.com/bwbio/PROSE/blob/assets/Schematic.jpg)
+<img src="https://github.com/bwbio/PROSE/blob/assets/Schematic.jpg" width="80%" height="80%">
 
 Given a list of observed or unobserved gene/protein list, PROSE identifies similarly enriched genes/proteins from a co-expression matrix. PROSE can also use a list of upregulated/downregulated elements as the input.
 
-Read the preprint here: https://doi.org/10.1101/2021.11.13.468488
+If you use PROSE in your work, please consider citing us: 
+
+Wong, B. J. H., Kong, W., & Goh, W. W. B. (2021). _Single-sample proteome enrichment enables missing protein recovery and phenotype association_. bioRxiv. https://doi.org/10.1101/2021.11.13.468488
+
 
 ## Installation
 
@@ -70,6 +73,4 @@ By default, PROSE also creates a log folder to store its output (you can disable
 - **_summary.tsv_** contains a human-readable version of the above DataFrame
 - **_prose_object.pkl_** contains the pickled PROSE output
 - **_distribution.png_** shows the score and probability distributions of the individual classes
-
-![Distribution](https://github.com/bwbio/PROSE/blob/assets/Distribution.jpg)
-
+<img src="https://github.com/bwbio/PROSE/blob/assets/Distribution.jpg" width="70%" height="70%">
