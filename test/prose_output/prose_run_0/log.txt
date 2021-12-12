@@ -1,0 +1,19 @@
+Run 13/12/2021 06:35:46 completed in 1.23s
+3306 of 3338 input observed proteins in feature space
+6184 of 7410 input unobserved proteins in feature space
+
+Arguments:
+[imb] Imbalance correction: reweight
+[holdout_n] Holdout proteins: 100 per class
+[svm_kwargs]: {'class_weight': 'balanced'}
+[bag_kwargs]: {'n_estimators': 5, 'max_samples': 100, 'max_features': 50}
+[logistic_kwargs]: {}
+
+Performance:
+Set	Acc.	F1	AUC
+Test	0.7000	0.6875	0.7850
+Train	0.7672	0.6807	0.8480
+
+Confusion matrix:
+[[74 26]
+ [34 66]]

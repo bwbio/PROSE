@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: pyprose
+Version: 1.0.0
+Summary: PROSE uses a simple list of high-/low-confidence proteins in a proteomic screen to generate enrichment scores for individual proteins in the proteome.
+Home-page: https://github.com/bwbio/PROSE
+Author: Bertrand Wong
+Author-email: bwjh98@gmail.com
+License: UNKNOWN
+Description: View the project details at: https://github.com/bwbio/PROSE/
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8

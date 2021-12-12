@@ -209,7 +209,7 @@ class prose:
                     basepath = os.getcwd()
                                
                     if logging_path == '':
-                        path = basepath + '\\prose_output'
+                        path = basepath + '/prose_output'
                     else:
                         path = logging_path
             
@@ -221,27 +221,28 @@ class prose:
                         for i in range(10000):
                             expt_label = 'prose_run_{}'.format(i)
 
-                            newfolder = path+'\\{}'.format(expt_label)
+                            newfolder = path+'/{}'.format(expt_label)
                             
                             if expt_label not in existing_folders:
                                 path = newfolder
                                 break
                     else:            
-                        newfolder = path+'\\'+expt_label
+                        newfolder = path+'/'+expt_label
                         if expt_label not in existing_folders:
                             path = newfolder
                         else:
                             for i in range(10000):
                                 temp_expt_label = '{}_{}'.format(expt_label,i)
-                                newfolder = path+'\\{}'.format(temp_expt_label)
+                                newfolder = path+'/{}'.format(temp_expt_label)
                                 if temp_expt_label not in existing_folders:
                                     path = newfolder
                                     break
 
+                    print('Writing logs to {}'.format(newfolder))
                     os.makedirs(newfolder, exist_ok=True)
                     
                 if 'Write log.txt':
-                        with open("{}\\log.txt".format(newfolder), "w") as txt:
+                        with open("{}/log.txt".format(newfolder), "w") as txt:
                          txt.write(logstr)
                                              
                 if 'Write distribution.png':
@@ -268,18 +269,21 @@ class prose:
                             plt.subplots_adjust(hspace=0.5)
                             fig.supylabel('Density',x=0.01)
                             
-                            plt.savefig("{}\\distribution.png".format(newfolder),
+                            plt.savefig("{}/distribution.png".format(newfolder),
                                         format='png', dpi=100, bbox_inches='tight') 
                             plt.show() 
                         except:
-                            print('Missing plotting libraries (matplotlib.pyplot or seaborn')
+                            pass
 
                 if 'Write summary.tsv':
                     condensed = self.summary.round(3)
-                    condensed.to_csv("{}\\summary.tsv".format(newfolder),
+                    condensed.to_csv("{}/summary.tsv".format(newfolder),
                                      sep = '\t',
                                      index=False)
 
+                if 'Write prose_object.pkl':
+                    with open('{}/prose_object.pkl'.format(newfolder), 'wb') as handle:
+                        pickle.dump(self, handle, protocol=pickle.HIGHEST_PROTOCOL)
 class vignette:
     def __init__(self):
         
@@ -290,15 +294,4 @@ class vignette:
 
         strm = pkg_resources.resource_stream(__name__, 'vignette/klijn_panel_spearman.csv.gz')
         self.panel_corr = pd.read_csv(strm, compression='gzip', index_col=0)
-
-
-#%% Test code
-# q=prose(obs,unobs,panel_corr,
-#         imb='reweight',
-#         holdout_n=100,
-#         bag_kwargs=dict(n_estimators=5),
-#         expt_label='HeLa',
-#         verbose=False,
-#         )
-
 

@@ -1,0 +1,9 @@
+README.md
+setup.py
+pyprose/__init__.py
+pyprose.egg-info/PKG-INFO
+pyprose.egg-info/SOURCES.txt
+pyprose.egg-info/dependency_links.txt
+pyprose.egg-info/requires.txt
+pyprose.egg-info/top_level.txt
+test/tester.py
