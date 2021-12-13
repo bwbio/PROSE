@@ -71,7 +71,7 @@ print(result.summary)
 
 ## Logging
 By default, PROSE also creates a log folder to store its output (you can disable this by setting _verbose_ = False).
-- **_log.txt_** contains the main arguments used for the run
+- **_log.txt_** contains the main arguments used for the run, as well as prediction metrics
 - **_summary.tsv_** contains a human-readable version of the above DataFrame
 - **_prose_object.pkl_** contains the pickled PROSE output
 - **_distribution.png_** shows the score and probability distributions of the individual classes
