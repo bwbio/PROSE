@@ -25,7 +25,7 @@ pip install pyprose -U
 ## Example Usage
 PROSE can be easily run as a command line tool or in your IDE of choice. The following Python code demonstrates how to generate PROSE enrichment scores for proteins in a given correlation matrix. 
 
-**_pyprose.vignette_()** contains our example dataset. This includes [HeLa protein sets from Mehta et al. (2021)](https://doi.org/10.1101/2020.11.07.372276), as well as a downcast correlation matrix generated from the [Klijn et al. (2015) RNA-Seq dataset](https://doi.org/10.1038/nbt.3080).
+**_pyprose.vignette_()** contains our example dataset. This includes [HeLa protein sets from Mehta et al. (2021)](https://doi.org/10.1101/2020.11.07.372276), as well as a co-expression matrix generated from the [Klijn et al. (2015) RNA-Seq dataset](https://doi.org/10.1038/nbt.3080).
 ```
 import pyprose
 
