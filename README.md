@@ -1,7 +1,9 @@
 # PROSE
-<img src="https://github.com/bwbio/PROSE/blob/assets/Schematic.jpg" width="80%" height="80%">
+<img src="https://github.com/bwbio/PROSE/blob/assets/Schematic.jpg" width="100%" height="100%">
 
-Given a list of observed or unobserved gene/protein list, PROSE identifies similarly enriched genes/proteins from a co-expression matrix. PROSE can also use a list of upregulated/downregulated elements as the input.
+Given a list of well-defined observed/unobserved proteins, PROSE rapidly learns their underlying co-regulation patterns in a related gene co-expression matrix, before generating an enrichment score for all proteins in the proteome, including _missing proteins_ that were not considered in the initial lists.
+
+In general, these enrichment scores correspond to the _importance_ of the individual proteins in the sample phenotype. As we expect a considerable number of proteins to be missing in any proteomic screen, we can use a high enrichment score as a threshold for recoving some of these missing proteins. PROSE scores can also be directly applied to downstream analyses, with the increased proteome coverage leading to more robust results.
 
 If you use PROSE in your work, please consider citing us: 
 
@@ -21,7 +23,7 @@ pip install pyprose -U
 ```
 
 ## Example Usage
-Running PROSE is straightforward in the terminal, IDE, or command line. The following Python code demonstrates how to generate PROSE scores for proteins in a given correlation matrix. 
+PROSE can be easily run as a command line tool or in your IDE of choice. The following Python code demonstrates how to generate PROSE scores for proteins in a given correlation matrix. 
 ```
 import pyprose
 
@@ -63,7 +65,7 @@ print(result.summary)
 - **_protein_** gives individual protein IDs, taken from the index of the correlation matrix used
 - **_y_pred_** is the predicted label
 - **_y_true_** is the true label (1 for observed, 0 for unobserved, -1 for unknown)
-- **_score_** is the raw decision function<br />
+- **_score_** measures how strongly a protein is close to the 'observed' group (positive values are closer)
 - **_score_norm_** is the normalized score (ideally, use this for downstream analysis)
 - **_prob_** is the probability that the protein is considered 'observed'
 
@@ -73,4 +75,4 @@ By default, PROSE also creates a log folder to store its output (you can disable
 - **_summary.tsv_** contains a human-readable version of the above DataFrame
 - **_prose_object.pkl_** contains the pickled PROSE output
 - **_distribution.png_** shows the score and probability distributions of the individual classes
-<img src="https://github.com/bwbio/PROSE/blob/assets/Distribution.jpg" width="70%" height="70%">
+<img src="https://github.com/bwbio/PROSE/blob/assets/Distribution.jpg" width="75%" height="75%">
