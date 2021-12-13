@@ -23,7 +23,9 @@ pip install pyprose -U
 ```
 
 ## Example Usage
-PROSE can be easily run as a command line tool or in your IDE of choice. The following Python code demonstrates how to generate PROSE scores for proteins in a given correlation matrix. 
+PROSE can be easily run as a command line tool or in your IDE of choice. The following Python code demonstrates how to generate PROSE enrichment scores for proteins in a given correlation matrix. 
+
+**_pyprose.vignette_()** contains our example dataset. This includes [HeLa protein sets from Mehta et al. (2021)](https://doi.org/10.1101/2020.11.07.372276), as well as a downcast correlation matrix generated from the [Klijn et al. (2015) RNA-Seq dataset](https://doi.org/10.1038/nbt.3080).
 ```
 import pyprose
 
@@ -70,7 +72,7 @@ print(result.summary)
 - **_prob_** is the probability that the protein is considered 'observed'
 
 ## Logging
-By default, PROSE also creates a log folder to store its output (you can disable this by setting _verbose_ = False).
+By default, PROSE also creates a log folder to store its output (you can disable this by setting **_verbose_** = False).
 - **_log.txt_** contains the main arguments used for the run, as well as prediction metrics
 - **_summary.tsv_** contains a human-readable version of the above DataFrame
 - **_prose_object.pkl_** contains the pickled PROSE output
