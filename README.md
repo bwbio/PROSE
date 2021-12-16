@@ -12,7 +12,7 @@ Wong, B. J. H., Kong, W., & Goh, W. W. B. (2021). _Single-sample proteome enrich
 
 ## Installation
 
-PROSE can be installed directly from PyPI as follows:
+PROSE (and necessary dependencies) can be installed directly from PyPI as follows:
 ```
 pip install pyprose
 ```
@@ -21,6 +21,7 @@ Or, to update PROSE to its latest version:
 ```
 pip install pyprose -U
 ```
+
 
 ## Example Usage
 PROSE can be easily run as a command line tool or in your IDE of choice. The following Python code demonstrates how to generate PROSE enrichment scores for proteins in a given correlation matrix. 
